@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+</head>
+<body>
+<div th:fragment="fragment-1">
+    <nav class="navbar navbar-dark  bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
+            <span>Пользователь "</span><span th:text="${currentUser.email}"></span><span>" c ролями: </span>
+            <span th:each="i : ${currentUser.getRoles()}" th:text="${#strings.substringAfter(i.getAuthority(), '_') + ' '}"></span></a>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" th:href="@{/logout}">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+    <br/>
+    <br/>
+</div>
+</body>
+</html>
