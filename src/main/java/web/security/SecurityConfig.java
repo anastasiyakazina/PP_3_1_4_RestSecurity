@@ -27,19 +27,31 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf()
                 .disable()
                 .authorizeRequests()
-              //  .antMatchers("/login", "/").permitAll()
+                //.antMatchers("/login", "/").permitAll()
                 .antMatchers("/user/**").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-          //      .loginPage("/login")
+                .loginPage("/login")
+                .successHandler(new LoginSuccessHandler())
+                .loginProcessingUrl("/login")
+                .usernameParameter("email")
+                .passwordParameter("password")
+                .permitAll()
+                .and().exceptionHandling().accessDeniedPage("/error")
+        //             .loginPage("/login")
+//        //указываем логику обработки при логине
+//                .successHandler(new LoginSuccessHandler())
+//                // указываем action с формы логина
+//                .loginProcessingUrl("/login")
+//        // Указываем параметры логина и пароля с формы логина
 //                .usernameParameter("email")
 //                .passwordParameter("password")
-//                .loginProcessingUrl("/login")
-                .successHandler(new LoginSuccessHandler())
-                .permitAll()
-                .and().logout()
+//                // даем доступ к форме логина всем
+//                .permitAll();
+               .and()
+                .logout()
                 .logoutUrl("/logout")
                 .logoutSuccessUrl("/login");
     }
