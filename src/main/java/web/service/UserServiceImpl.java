@@ -1,6 +1,7 @@
 package web.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,11 +19,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+
 @Transactional
 @Service
 public class UserServiceImpl implements UserDetailsService, UserService {
 
     private final UserRepo userRepo;
+
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -67,10 +70,10 @@ public class UserServiceImpl implements UserDetailsService, UserService {
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         User user = findByEmail(s);
         if (user == null) {
-            throw new UsernameNotFoundException("");
+            throw new UsernameNotFoundException("USER NOT FOUND");
         }
-        return new org.springframework.security.core.userdetails.User(user.getEmail(),
-                user.getPassword(), convRoles(user.getRoles()));
+
+        return user;
     }
 
     private Collection<? extends GrantedAuthority> convRoles(Collection<Role> roles) {
