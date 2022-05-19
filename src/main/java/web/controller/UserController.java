@@ -20,11 +20,6 @@ public class UserController {
         this.userService = userService;
     }
 
-//    @GetMapping(value = "/login")
-//    public String loginPage() {
-////        model.addAttribute("title", "Форма входа");
-//        return "login1";
-//    }
 
     @GetMapping
     public String userPage(Principal principal, Model model) {

@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Component
+
 @Table(name = "users")
 @Getter
 @Setter
@@ -34,7 +34,7 @@ public class User implements UserDetails {
    @Column(name="age")
    private int age;
 
-   @Column(name = "email", unique = true, length = 100)
+   @Column(name = "email")
    private String email;
 
    @Column
@@ -76,7 +76,7 @@ public class User implements UserDetails {
 
    @Override
    public String getUsername() {
-      return lastName;
+      return email;
    }
 
    @Override

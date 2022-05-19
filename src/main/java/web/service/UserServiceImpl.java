@@ -70,10 +70,10 @@ public class UserServiceImpl implements UserDetailsService, UserService {
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         User user = findByEmail(s);
         if (user == null) {
-            throw new UsernameNotFoundException("USER NOT FOUND");
+            throw new UsernameNotFoundException("");
         }
-
-        return user;
+        return new org.springframework.security.core.userdetails.User(user.getEmail(),
+                user.getPassword(), convRoles(user.getRoles()));
     }
 
     private Collection<? extends GrantedAuthority> convRoles(Collection<Role> roles) {

@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Component
+
 @Table(name = "roles")
 @Setter
 @Getter
