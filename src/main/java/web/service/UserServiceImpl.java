@@ -72,8 +72,7 @@ public class UserServiceImpl implements UserDetailsService, UserService {
         if (user == null) {
             throw new UsernameNotFoundException("");
         }
-        return new org.springframework.security.core.userdetails.User(user.getEmail(),
-                user.getPassword(), convRoles(user.getRoles()));
+        return user;
     }
 
     private Collection<? extends GrantedAuthority> convRoles(Collection<Role> roles) {
