@@ -7,16 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="PP_3_1_3_BootstrapSecurity" />
+        <module name="PP_3_1_4RestSecurity" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="PP_3_1_3_BootstrapSecurity" target="1.8" />
+      <module name="PP_3_1_4RestSecurity" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="PP_3_1_3_BootstrapSecurity" options="-parameters" />
+      <module name="PP_3_1_4RestSecurity" options="-parameters" />
     </option>
   </component>
 </project>
