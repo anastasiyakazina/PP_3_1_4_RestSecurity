@@ -7,16 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="PP_3_1_4RestSecurity" />
+        <module name="PP_3_1_4_Rest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="PP_3_1_4RestSecurity" target="11" />
+      <module name="PP_3_1_4_Rest" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="PP_3_1_4RestSecurity" options="-parameters" />
+      <module name="PP_3_1_4_Rest" options="-parameters" />
     </option>
   </component>
 </project>

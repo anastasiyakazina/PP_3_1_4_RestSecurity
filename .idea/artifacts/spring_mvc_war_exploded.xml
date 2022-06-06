@@ -11,7 +11,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="PP_3_1_4RestSecurity" />
+          <element id="module-output" name="PP_3_1_4_Rest" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: javax.annotation:javax.annotation-api:1.3.2" />
