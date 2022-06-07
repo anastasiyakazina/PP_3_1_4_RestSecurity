@@ -17,8 +17,8 @@ public class AdminRestController {
     private final UserService userService;
 
     @GetMapping()
-    public List <User> getAll() {
-        return userService.getAllUsers();
+    public ResponseEntity<List<User>> getAll() {
+        return ResponseEntity.ok(userService.getAllUsers());
     }
 
 //    ResponseEntity - специальный класс, который представляет http-ответ.
